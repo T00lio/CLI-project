@@ -1,9 +1,8 @@
 require_relative "movie"
 
-
 class Cinema
   def initialize
-    @movie = []
+    @movies = []  # Ensure this is @movies
   end
 
   def run
@@ -36,14 +35,14 @@ class Cinema
     print "Enter movie title: "
     title = gets.chomp
     print "Enter director name: "
-    author = gets.chomp
-    @movie << Movie.new(title, director)
+    director = gets.chomp  # Changed from author to director
+    @movies << Movie.new(title, director)
     puts "Movie added successfully!"
   end
 
   def list_movies
     puts "Movies in the cinema:"
-    @movies.each do |movie|
+    @movies.each do |movie|  # Changed from @movie to @movies
       puts movie
     end
   end

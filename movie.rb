@@ -1,5 +1,5 @@
 class Movie
-  attr_accessor :title, :director
+  attr_reader :title, :director
 
   def initialize(title, director)
     @title = title
