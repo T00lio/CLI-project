@@ -6,4 +6,9 @@ To launch the app, from this repo, launch a codespace and in the terminal use th
 
 This will launch the CLI app and you can begin storing the movies for any purpose you like!
 
+For testing purposes run the following command to test the main cinema.rb fil
+
+``ruby -Itest test/test_cinema.rb
+``
+
 Good luck and have fun!
