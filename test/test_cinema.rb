@@ -1,18 +1,18 @@
-require "minitest/autorun"
-require_relative "cinema.rb"
-require "stringio"
+require 'minitest/autorun'
+require_relative '../cinema'
+require 'stringio'
 
-Class CinemaTest < MiniTest :: Test
+class CinemaTest < Minitest::Test
   def setup
     @cinema = Cinema.new
   end
 
-  def test_add_movie 
-    $stdin = StringIO.new("Star Wars\nGeorgeLucas\n" )
-    assert_changes -> {@cinema.instance_variable.get(:movies).size}, from: 0, to: 1 do
-      @cinema.send (:add_movie)
+  def test_add_movie
+    $stdin = StringIO.new("Star Wars\nGeorge Lucas\n")
+    assert_changes -> { @cinema.instance_variable_get(:@movies).size }, from: 0, to: 1 do
+      @cinema.send(:add_movie)
     end
-    movie = @cinema.instance_variable_set(@movies).last
+    movie = @cinema.instance_variable_get(:@movies).last
     assert_equal "Star Wars", movie.title
     assert_equal "George Lucas", movie.director
   ensure
