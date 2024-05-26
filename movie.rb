@@ -7,6 +7,6 @@ class Movie
   end
 
   def to_s
-    "#{@title} by #{@director}"
+    "#{@title} directed by #{@director}"
   end
 end

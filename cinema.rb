@@ -2,7 +2,7 @@ require_relative "movie"
 
 class Cinema
   def initialize
-    @movies = []  # Ensure this is @movies
+    @movies = []
   end
 
   def run
@@ -31,18 +31,16 @@ class Cinema
 
   private
 
-  def add_movie
-    print "Enter movie title: "
-    title = gets.chomp
-    print "Enter director name: "
-    director = gets.chomp  # Changed from author to director
+  def add_movie(title = nil, director = nil)
+    title ||= (print "Enter movie title: "; gets.chomp)
+    director ||= (print "Enter director name: "; gets.chomp)
     @movies << Movie.new(title, director)
     puts "Movie added successfully!"
   end
 
   def list_movies
     puts "Movies in the cinema:"
-    @movies.each do |movie|  # Changed from @movie to @movies
+    @movies.each do |movie|
       puts movie
     end
   end
